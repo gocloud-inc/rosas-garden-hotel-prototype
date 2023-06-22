@@ -1,0 +1,193 @@
+// Maps: Theme Colors
+$theme-colors: (
+    "primary":      var(--color-primary),
+    "danger":       var(--color-danger),
+    "light":        var(--color-light),
+    "medium":       var(--color-medium),
+    "dark":         var(--color-dark)
+) !default;
+
+@mixin button($background, $color, $hover-background, $hover-color, $size: 24px) {
+    background: $background;
+    color: $color;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2); /* Replace with desired color */
+        transition: left 0.3s ease;
+    }
+    
+    &:hover {
+        background-color: $hover-background;
+        color: $hover-color;
+        // filter: drop-shadow(0 0 0.2em $hover-background);
+    }
+    
+    &:hover::before {
+        left: 100%;
+    }
+
+    i, span {
+        font-size: $size;
+        color: $color;
+    }
+
+    &:disabled {
+        opacity: 0.2;
+        cursor: not-allowed; 
+    }
+}
+
+%buttonDefaults {
+    position: relative;
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 1px;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-decoration: none;
+    white-space: nowrap;
+    will-change: filter;
+    transition: filter 300ms;
+    width: fit-content;
+}
+
+// Default 
+.button {
+    @extend %buttonDefaults;
+}
+
+@each $color, $value in $theme-colors {
+    // Default styles
+    .button-#{$color} {
+        @include button($value, var(--color-#{$color}-contrast), var(--color-#{$color}-tint), var(--color-#{$color}-contrast));
+    }
+
+    // Tonal styles
+    .button-tonal-#{$color} {
+        @include button(rgba(var(--color-#{$color}-rgb), 0.1), var(--color-#{$color}-shade), rgba(var(--color-#{$color}-rgb), 0.15), var(--color-#{$color}-shade));
+        border: 1px solid rgba(var(--color-#{$color}-rgb), 0.05);
+    }
+
+    // Outline styles
+    .button-outline-#{$color} {
+        @include button(none, var(--color-#{$color}), rgba(var(--color-#{$color}-rgb), 0.9), var(--color-#{$color}-contrast));
+        border: 2px solid rgba(var(--color-#{$color}-rgb), 0.8);
+    }
+
+    // Link styles
+    .button-link-#{$color} {
+        @include button(none, var(--color-#{$color}), rgba(var(--color-#{$color}-rgb), 0.05), var(--color-#{$color}), $size: 24px);
+        color: var(--color-#{$color});
+
+        i, span {
+            color: rgba(var(--color-#{$color}-rgb), 0.8);
+        }
+    }
+}
+
+// Block
+.button-block {
+    width: 100%;
+}
+
+// Sizes
+
+// Define the button sizes as SCSS variables
+$button-padding-x: 1.5rem;
+$button-padding-y: 0.8rem;
+$button-font-size: 1rem;
+
+// Define a mixin to generate the styles for each size
+@mixin button-size($padding-x, $padding-y, $font-size) {
+    padding: $padding-y $padding-x;
+    font-size: $font-size;
+}
+
+// Define the sizes using the button-size mixin
+.button-xs {
+    @include button-size(0.4rem, 0.2rem, 0.75rem);
+}
+
+.button-sm {
+    @include button-size(0.5rem, 0.25rem, 0.875rem);
+}
+
+.button-md {
+    @include button-size($button-padding-x, $button-padding-y, $button-font-size);
+}
+
+.button-lg {
+    @include button-size(2rem, 1rem, 1rem);
+}
+
+.button-xl {
+    @include button-size(2.6rem, 1rem, 1.25rem);
+}
+
+
+// Fab
+
+.button-fab {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1rem;
+}
+
+.button-xl-fab {
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 1rem;
+
+    span {
+        font-size: 3rem;
+    }
+}
+
+.button-lg-fab {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+
+    span {
+        font-size: 2.5rem;
+    }
+}
+
+.button-md-fab {
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 1rem;
+
+    span {
+        font-size: 2rem;
+    }
+}
+
+.button-sm-fab {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem;
+}

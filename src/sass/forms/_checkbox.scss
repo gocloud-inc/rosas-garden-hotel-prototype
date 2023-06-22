@@ -1,0 +1,83 @@
+// Define the variables for the colors
+$primary-color: var(--color-primary);
+$secondary-color: rgba(var(--color-dark-rgb), 0.2);
+$background-color: rgba(var(--color-dark-rgb), 0.1);
+
+// Define the styles for the checkbox input
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+
+    input[type="radio"] {
+        appearance: none;
+        position: relative;
+        width: 1.5em;
+        height: 1.5em;
+        border: 2px solid $secondary-color;
+        background-color: $background-color;
+        border-radius: 0.25em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:checked {
+            background-color: $primary-color;
+            border-color: $primary-color;
+
+            &:before {
+                content: '\e5ca';
+                position: absolute;
+                font-family: 'Material Symbols Rounded';
+                font-weight: 900;
+                font-size: 1rem;
+                color: var(--color-primary-contrast);
+                left: 0;
+                top: 0;
+                right: 0;
+                line-height: 1;
+            }
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .form-check-label {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+}
+
+.form-check-input {
+    transition: all 0.2s ease;
+    background-color: var(--color-card);
+	cursor: pointer;
+	padding: 0.5rem;
+    width: 1.3em;
+    height: 1.3em;
+    border-color: rgba(var(--color-dark-rgb), 0.4);
+
+	&:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: none;
+    }
+
+	&:checked {
+		background-color: var(--color-primary);
+		border-color: var(--color-primary);
+	}
+}
+
+.form-switch .form-check-input {
+    width: 2.8em !important;
+    height: 1.6em !important;
+    transition: all 0.2s ease;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+}
+

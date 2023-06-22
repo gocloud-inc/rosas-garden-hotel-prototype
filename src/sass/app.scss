@@ -1,0 +1,65 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// scss-docs-start import-stack
+// Configuration
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// Layout & components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/offcanvas";
+
+// Helpers
+@import "~bootstrap/scss/helpers";
+
+// Utilities
+@import "~bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+// Configuration 
+@import "variables";
+@import "mixins";
+@import "base";
+@import "breadcrumbs";
+@import "container";
+@import "empty-state";
+@import "table";
+
+// Utilities
+@import "utilities/colors";
+@import "utilities/font-sizes";
+@import "utilities/font-weights";
+
+// Components
+@import "components/accordion";
+@import "components/buttons";
+@import "components/cards";
+@import "components/dropdown";
+@import "components/tabs";
+@import "components/pagination";
+
+// Forms
+@import "forms/input";
+
+// Layouts
+@import "layouts/header";
+@import "layouts/section";
+@import "layouts/articles";
+@import "layouts/footer";
+
+
+
+

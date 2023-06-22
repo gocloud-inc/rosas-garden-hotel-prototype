@@ -1,0 +1,17 @@
+.accordion-item {
+    border: 1px dashed rgba(var(--color-medium-rgb), 0.4);
+
+    .accordion-header {
+        margin-top: 0;
+    }
+}
+
+.accordion-button {
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:not(.collapsed) {
+        background-color: rgba(var(--color-primary-rgb), 0.1);
+    }
+}

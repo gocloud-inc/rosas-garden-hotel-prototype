@@ -1,0 +1,115 @@
+.table {
+    background-color: var(--color-card);
+    border-collapse: collapse;
+    border-radius: 8px;
+    border-spacing: 0;
+    border: 1px solid var(--color-card-shade);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    margin-bottom: 0;
+    width: 100%;
+
+    tr {
+        border-bottom: 1px solid var(--color-card-shade);
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: 0.5rem;
+        color: var(--color-medium);
+        text-align: left;
+        white-space: break-spaces;
+
+        @include breakpoint("sm") {
+            white-space: nowrap;
+        }
+    }
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 13px;
+    font-weight: 500;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @media (max-width: 576px) {
+        font-size: 11px;
+    }
+}
+
+.table-responsive {
+    position: relative;
+    overflow-x: inherit;
+
+    @media (max-width: 1400px) {
+        overflow-x: auto;
+    }
+
+    @media (max-width: 768px) {
+        overflow-x: auto;
+    }
+
+    @media (max-width: 567px) {
+        overflow-x: auto;
+    }
+}
+
+.sticky-column {
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: var(--color-card);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    z-index: 1;
+    right: 0;
+}
+
+// Stripes
+.table-stripes {
+    tr {
+        background-color: var(--color-primary);
+
+        th, td, a, button, span {
+            color: var(--color-primary-contrast) !important;
+        }
+
+        &:nth-child(even) {
+            background-color: var(--color-dark);
+
+            th, td, a, button, span {
+                color: var(--color-dark-contrast) !important;
+            }
+        }
+    }
+}
+
+.tbody-striped {
+    tr {
+        background-color: var(--color-primary);
+
+        td, a, button, span {
+            color: var(--color-primary-contrast) !important;
+        }
+
+        &:nth-child(even) {
+            background-color: var(--color-dark);
+
+            td, a, button, span {
+                color: var(--color-dark-contrast) !important;
+            }
+        }
+    }
+}
+
+// Colors
+.tr-dark {
+    background-color: var(--color-dark);
+
+    th, td {
+        color: var(--color-dark-contrast);
+    }
+}
