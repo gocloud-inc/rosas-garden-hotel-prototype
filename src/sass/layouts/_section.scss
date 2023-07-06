@@ -1,4 +1,4 @@
-$default-linear-gradient: linear-gradient(to top, rgba(var(--color-primary-rgb), 0.3), rgba(var(--color-dark-rgb), 0.4));
+$default-linear-gradient: linear-gradient(to top, rgba(var(--color-primary-rgb), 0.3), rgba(var(--color-secondary-rgb), 0.5));
 $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
 
 .hero-section {
@@ -122,7 +122,7 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
         left: 0;
         right: 0;
         bottom: 0;
-        background: $default-background-opaque;
+        background: $default-linear-gradient;
     }
     
     .cta-content {
