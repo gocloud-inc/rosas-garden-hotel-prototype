@@ -326,3 +326,29 @@ hr {
     text-overflow: ellipsis;
     -webkit-line-clamp: 3; /* Number of lines to show */
 }
+
+.menu-checklist {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            font-family: 'Material Symbols Rounded';
+            content: '\e876'; /* Unicode value for the desired symbol */
+            color: var(--color-primary); /* replace with your desired color */
+            display: inline-block;
+            width: 1.2em;
+            margin-right: 0.5em;
+            font-size: 1.5rem;
+        }
+    } 
+}
+
+@include breakpoint("xl") {
+    .display-sm-none {
+        display: none !important;
+    }
+}

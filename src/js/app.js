@@ -16,37 +16,19 @@ import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
 
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 const turboLoad = () => {
     
     // init Swiper:
-    const swiperParners = new Swiper('.swiper-partners', {
-        initialSlide: 6,
-        slidesPerView: 6,
-        spaceBetween: 30,
-        // Responsive breakpoints
-        breakpoints: {
-            // when window width is >= 320px
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 10
-            },
-            // when window width is >= 480px
-            480: {
-                slidesPerView: 3,
-                spaceBetween: 10
-            },
-            // when window width is >= 640px
-            640: {
-                slidesPerView: 4,
-                spaceBetween: 10
-            }
-        },
+    const swiperGalleries = new Swiper('.swiper-gallery', {
         centeredSlides: true,
         centeredSlidesBounds: true,
         loop: true,
-        autoplay: {
-            delay: 5000,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     });
 
@@ -69,6 +51,12 @@ const turboLoad = () => {
         effect: 'fade',
         fadeEffect: {
             crossFade: true
+        },
+    });
+
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        Images: {
+            protected: true
         },
     });
 

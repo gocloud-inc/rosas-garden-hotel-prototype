@@ -1,0 +1,23 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .photo {
+        flex: 1 0 250px; /* Adjust the width as needed */
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+}

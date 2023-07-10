@@ -19,6 +19,15 @@ $theme-colors: (
     .background-tonal-#{$name} {
         background-color: rgba(var(--color-#{$name}-rgb), 0.1) !important;
     }
+
+    .background-hover-#{$name} {
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-#{$name}) !important;
+            color: var(--color-#{$name}-contrast) !important;
+        }
+    }
 }
 
 .background-transparent {

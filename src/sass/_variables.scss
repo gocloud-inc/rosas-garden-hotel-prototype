@@ -190,11 +190,29 @@
 	}
 } 
 
-.swiper-banners {
-	--swiper-navigation-color: var(--color-light);
-	--swiper-navigation-sides-offset: 60px;
+.swiper-gallery {
+	overflow: hidden;
 
-	.swiper-pagination, .swiper-button-next, .swiper-button-prev {
-		z-index: 1;
+	.swiper-button-prev,
+	.swiper-button-next {
+		--swiper-navigation-size: 24px;
+		--swiper-navigation-color: var(--color-dark);
+		background-color: var(--color-card);
+		border-radius: 50%;
+		width: 3rem;
+		height: 3rem;
+		transition: background-color 0.3s ease;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	}
+	
+	/* Hover effect for navigation buttons */
+	.swiper-button-prev:hover,
+	.swiper-button-next:hover {
+		transform:  scale(1.2);
+	}
+
+	.swiper-pagination {
+		--swiper-pagination-bottom: -20px;
+		--swiper-pagination-bullet-inactive-color: var(--color-medium);
 	}
 }
