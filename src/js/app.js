@@ -1,4 +1,3 @@
-import * as Turbo from "@hotwired/turbo";
 import { Modal, Dropdown } from "bootstrap";
 import Button from "./buttons";
 import Greeting from "./greeting";
@@ -19,51 +18,53 @@ import 'swiper/css/bundle';
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-const turboLoad = () => {
+// JavaScript to hide the preloader after the page loads
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    preloader.style.display = 'none';
+});
+
     
+// init Swiper:
+const swiperGalleries = new Swiper('.swiper-gallery', {
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
     // init Swiper:
-    const swiperGalleries = new Swiper('.swiper-gallery', {
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+const swiperBanners = new Swiper('.swiper-banners', {
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 5000,
+    },
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+});
 
-     // init Swiper:
-    const swiperBanners = new Swiper('.swiper-banners', {
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 5000,
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-    });
+Fancybox.bind('[data-fancybox="gallery"]', {
+    Images: {
+        protected: true
+    },
+});
 
-    Fancybox.bind('[data-fancybox="gallery"]', {
-        Images: {
-            protected: true
-        },
-    });
-
-    Button.apply(Button);
-    Greeting.apply(Greeting);
-    Theme.apply(Theme);
-    Header.apply(Header);
-}
-
-document.addEventListener("turbo:load", turboLoad);
+Button.apply(Button);
+Greeting.apply(Greeting);
+Theme.apply(Theme);
+Header.apply(Header);

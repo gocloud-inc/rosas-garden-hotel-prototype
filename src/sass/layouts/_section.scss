@@ -6,8 +6,8 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 10rem 0;
-    height: 100vh;
+    padding: 15rem 0;
+    height: 80vh;
 
     &::before {
         content: '';
@@ -34,12 +34,12 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
         .hero-title {
             font-family: var(--font-serif);
             font-size: 5rem;
-            margin-bottom: 0.5rem;
+            margin: 0;
             line-height: 1.1;
             color: var(--color-light);
 
             @include breakpoint("sm") {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
             }
         }
     
@@ -61,7 +61,7 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
     background-size: cover;
     background-position: center;
     padding: 10rem 0;
-    height: 60vh;
+    height: 50vh;
 
     &::before {
         content: '';
@@ -88,7 +88,7 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
         .inner-title {
             font-family: var(--font-serif);
             font-size: 4rem;
-            margin-bottom: 0;
+            margin: 0;
             color: var(--color-light);
             line-height: 1.2;
 
