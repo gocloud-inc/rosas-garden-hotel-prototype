@@ -372,3 +372,9 @@ hr {
         display: none !important;
     }
 }
+
+@include breakpoint("sm") {
+    .flex-direction-sm-column-reverse {
+        flex-direction: column-reverse;
+    }
+}
