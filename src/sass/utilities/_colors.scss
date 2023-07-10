@@ -28,6 +28,14 @@ $theme-colors: (
             color: var(--color-#{$name}-contrast) !important;
         }
     }
+
+    .emphasize-hover-#{$name} {
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--color-#{$name}) !important;
+        }
+    }
 }
 
 .background-transparent {

@@ -38,16 +38,16 @@ export default defineConfig({
             input: {
                 app: 'src/js/app.js',
                 index: resolve(__dirname, 'index.html'),
+                accomodation: resolve(__dirname, 'accomodation.html'),
                 aboutUs: resolve(__dirname, 'about-us.html'),
                 banquet: resolve(__dirname, 'banquet.html'),
                 banquetSingle: resolve(__dirname, 'banquet-single.html'),
                 dining: resolve(__dirname, 'dining.html'),
                 facilities: resolve(__dirname, 'facilities.html'),
                 gallery: resolve(__dirname, 'gallery.html'),
+                contactUs: resolve(__dirname, 'contact-us.html'),
                 posts: resolve(__dirname, 'posts.html'),
                 postsSingle: resolve(__dirname, 'post-single.html'),
-                roomRates: resolve(__dirname, 'room-rates.html'),
-                roomTypes: resolve(__dirname, 'room-types.html'),
             },
             output: {
                 dir: 'dist',
