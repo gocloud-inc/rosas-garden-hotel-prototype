@@ -41,7 +41,29 @@ export default defineConfig({
                 accomodation: resolve(__dirname, 'accomodation.html'),
                 aboutUs: resolve(__dirname, 'about-us.html'),
                 banquet: resolve(__dirname, 'banquet.html'),
-                banquetSingle: resolve(__dirname, 'banquet-single.html'),
+
+                standardKiddiePackage: resolve(__dirname, 'standard-kiddie-package.html'),
+                eliteKiddiePackage: resolve(__dirname, 'elite-kiddie-package.html'),
+                premiumKiddiePackage: resolve(__dirname, 'premium-kiddie-package.html'),
+
+                standardBaptismal1: resolve(__dirname, 'standard-baptismal-buffet-1.html'),
+                standardBaptismal2: resolve(__dirname, 'standard-baptismal-package-buffet-2.html'),
+                internationalBaptismal3: resolve(__dirname, 'international-baptismal-package-buffet-3.html'),
+
+                standardWedding1: resolve(__dirname, 'standard-wedding-package-buffet-1.html'),
+                standardWedding2: resolve(__dirname, 'standard-wedding-package-buffet-2.html'),
+                internationaldWedding3: resolve(__dirname, 'international-gala-wedding-package-buffet-3.html'),
+                
+                standardDebut1: resolve(__dirname, 'standard-debut-package-buffet-1.html'),
+                standardDebut2: resolve(__dirname, 'standard-debut-package-buffet-2.html'),
+                internationaldDebut3: resolve(__dirname, 'international-gala-debut-package-buffet-3.html'),
+
+                liveInSeminar: resolve(__dirname, 'live-in-seminar-package.html'),
+                liveOutSeminar: resolve(__dirname, 'live-out-seminar-package.html'),
+
+                allOccasionsPlated: resolve(__dirname, 'all-occasions-plated-package.html'),
+                allOccasionsBuffet: resolve(__dirname, 'all-occasions-buffet-package.html'),
+
                 dining: resolve(__dirname, 'dining.html'),
                 facilities: resolve(__dirname, 'facilities.html'),
                 gallery: resolve(__dirname, 'gallery.html'),
