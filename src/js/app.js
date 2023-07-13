@@ -19,7 +19,6 @@ window.addEventListener('load', function() {
     preloader.style.display = 'none';
 });
 
-    
 // init Swiper:
 const swiperAccomodation = new Swiper('.swiper-accomodation', {
     centeredSlides: true,

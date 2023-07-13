@@ -1,4 +1,4 @@
-$default-linear-gradient: linear-gradient(to top, rgba(var(--color-primary-rgb), 0.3), rgba(var(--color-secondary-rgb), 0.5));
+$default-linear-gradient: linear-gradient(to top, rgba(var(--color-primary-rgb), 0.3), rgba(var(--color-primary-rgb), 0.5));
 $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
 
 .hero-section {
@@ -63,6 +63,11 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
     padding: 10rem 0;
     height: 50vh;
 
+    @include breakpoint("sm") {
+        padding: 0;
+        height: 35vh;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -93,7 +98,7 @@ $default-background-opaque: rgba(var(--color-dark-rgb), 0.7);
             line-height: 1.2;
 
             @include breakpoint("sm") {
-                font-size: 2rem;
+                font-size: 3rem;
             }
         }
     
