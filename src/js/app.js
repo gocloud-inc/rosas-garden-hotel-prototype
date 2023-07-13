@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 
     
 // init Swiper:
-const swiperGalleries = new Swiper('.swiper-gallery', {
+const swiperAccomodation = new Swiper('.swiper-accomodation', {
     centeredSlides: true,
     centeredSlidesBounds: true,
     loop: true,

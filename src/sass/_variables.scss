@@ -197,7 +197,33 @@
 	}
 } 
 
-.swiper-gallery {
+.swiper-banners {
+	.swiper-button-prev,
+	.swiper-button-next {
+		--swiper-navigation-size: 24px;
+		--swiper-navigation-color: var(--color-dark);
+		background-color: var(--color-card);
+		border-radius: 50%;
+		width: 3.5rem;
+		height: 3.5rem;
+		transition: background-color 0.3s ease;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		z-index: 1;
+	}
+	
+	/* Hover effect for navigation buttons */
+	.swiper-button-prev:hover,
+	.swiper-button-next:hover {
+		transform:  scale(1.2);
+	}
+
+	.swiper-pagination {
+		--swiper-pagination-color: var(--color-light);
+		z-index: 1;
+	}
+}
+
+.swiper-accomodation {
 	overflow: hidden;
 
 	.swiper-button-prev,
@@ -206,10 +232,11 @@
 		--swiper-navigation-color: var(--color-dark);
 		background-color: var(--color-card);
 		border-radius: 50%;
-		width: 3rem;
-		height: 3rem;
+		width: 3.5rem;
+		height: 3.5rem;
 		transition: background-color 0.3s ease;
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		z-index: 1;
 	}
 	
 	/* Hover effect for navigation buttons */
