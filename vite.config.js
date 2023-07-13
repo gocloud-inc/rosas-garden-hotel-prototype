@@ -40,7 +40,7 @@ export default defineConfig({
                 index: resolve(__dirname, 'index.html'),
                 accomodation: resolve(__dirname, 'accomodation.html'),
                 aboutUs: resolve(__dirname, 'about-us.html'),
-                banquet: resolve(__dirname, 'banquet.html'),
+                celebrate: resolve(__dirname, 'celebrate.html'),
 
                 standardKiddiePackage: resolve(__dirname, 'standard-kiddie-package.html'),
                 eliteKiddiePackage: resolve(__dirname, 'elite-kiddie-package.html'),
