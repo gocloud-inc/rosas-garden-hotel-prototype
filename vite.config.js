@@ -70,6 +70,8 @@ export default defineConfig({
                 contactUs: resolve(__dirname, 'contact-us.html'),
                 posts: resolve(__dirname, 'posts.html'),
                 postsSingle: resolve(__dirname, 'post-single.html'),
+                corporate: resolve(__dirname, 'corporate.html'),
+                gettingHere: resolve(__dirname, 'getting-here.html'),
             },
             output: {
                 dir: 'dist',

@@ -1,14 +1,15 @@
 %navMenuToggler {
     @include breakpoint("xl") {
         .nav-menu.show {
-            display: block;
+            display: flex;
+            flex-direction: column;
             position: fixed;
             left: 0;
             bottom: 0;
             right: 0;
             top: 0;
             background-color: var(--color-card);
-            padding: 1rem;
+            padding: 1.5rem;
             height: 100%;
             overflow-y: auto;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -17,12 +18,41 @@
             @include backdrop-blur("card");
 
             .nav-item {
-                margin: 2.5rem 0;
+                margin: .5rem 0;
 
                 .nav-link {
                     font-size: 1.2rem;
                     color: var(--color-card-contrast);
                 }
+            }
+        }
+    }
+}
+
+.top-header {
+    background-color: var(--color-primary);
+    padding: 1rem 0;
+
+    @include breakpoint("xl") {
+        display: none;
+    }
+
+    .top-nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .top-nav-button {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-primary-contrast);
+            padding: 0.6rem 1rem;
+            transition: 0.3s ease-in-out;
+            border-radius: 24px;
+
+            &:hover {
+                background-color: var(--color-card);
+                color: var(--color-card-contrast);
             }
         }
     }
@@ -66,7 +96,7 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
             padding: 0;
             margin: 0;
 
@@ -75,8 +105,18 @@
             }
 
             .nav-item {
-                .active, [aria-current=page] {
-                    background: rgba(var(--color-primary-rgb), 0.1);
+                position: relative;
+
+                .nav-link[aria-current=page] {
+                    @include breakpoint("lg") {
+                        background-color: var(--color-primary);
+                        color: var(--color-primary-contrast);
+                        padding: .5rem 1rem;
+                    }
+
+                    &::before {
+                        width: 30%; /* Expand the width to animate from left to right */
+                    }
                 }
 
                 .nav-link {
@@ -90,9 +130,30 @@
                     align-items: center;
                     justify-content: space-between;
                     gap: 0.5rem;
+                    transition: background-color 0.3s ease;
+                    width: fit-content;
 
-                    &:hover {
-                        background: rgba(var(--color-primary-rgb), 0.1);
+                    @media (min-width: 1200px) {
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0; /* Update the position to the bottom */
+                            left: 50%; /* Start from the middle of the element */
+                            width: 0;
+                            height: 3px; /* Swap width and height for horizontal animation */
+                            background-color: var(--color-primary); /* replace with your desired color */
+                            transition: width 0.2s ease-out; /* Update the transition property */
+                            transform: translateX(-50%); /* Move the element horizontally */
+                            border-radius: 12px;
+                        }
+                        
+                        &:hover::before {
+                            width: 30%; /* Expand the width to animate from left to right */
+                        }
+                        
+                        &:hover {
+                            background-color: rgba(var(--color-medium-rgb), 0.05);
+                        }
                     }
 
                     span {
@@ -187,3 +248,54 @@ header.sticky {
 }
 
 
+.nav-sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0; 
+    padding: 0; 
+    min-width: 240px;
+    background-color: var(--color-card);
+    list-style: none;
+    z-index: 4;
+    transition: 0.3s ease all;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+}
+
+.nav-sub-menu { 
+    opacity: 0; 
+    height: 0; 
+    transform: translateY(50px); 
+    visibility: hidden; 
+    z-index: -1; 
+    background-color: var(--color-card); 
+    position: absolute; 
+}
+
+.nav-item:hover .nav-sub-menu { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0); 
+    z-index: 4; 
+    height: auto; 
+}
+
+.nav-item:hover .nav-sub-menu {
+    display: block;
+}
+
+.nav-sub-item {
+    padding: 1rem;
+    width: 100%;
+
+    &:hover, &:hover a {
+        background-color: var(--color-primary); 
+        color: var(--color-primary-contrast);
+    }
+    
+    a {
+        display: block; 
+        font-size: 14px;
+    }
+}

@@ -367,6 +367,25 @@ hr {
     } 
 }
 
+.menu-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        i {
+            font-size: 21px;
+            color: var(--color-medium);
+        }
+    } 
+}
+
 @include breakpoint("xl") {
     .display-sm-none {
         display: none !important;

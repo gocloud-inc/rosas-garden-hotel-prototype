@@ -129,8 +129,33 @@
 		transform:  scale(1.2);
 	}
 
+	// .swiper-pagination {
+	// 	--swiper-pagination-bottom: -20px;
+	// 	--swiper-pagination-bullet-inactive-color: var(--color-medium);
+	// }
+}
+
+.swiper-accomodation {
+	.swiper-button-prev,
+	.swiper-button-next {
+		visibility: hidden;
+		transition: all 3ms ease-in-out;
+
+	}
+
+	&:hover {
+		.swiper-button-prev,
+		.swiper-button-next {
+			visibility: visible;
+		}
+	}
+}
+
+.swiper-corporate {
+	overflow: visible;
+
 	.swiper-pagination {
-		--swiper-pagination-bottom: -20px;
+		--swiper-pagination-bottom: -30px;
 		--swiper-pagination-bullet-inactive-color: var(--color-medium);
 	}
 }
