@@ -72,6 +72,7 @@ export default defineConfig({
                 postsSingle: resolve(__dirname, 'post-single.html'),
                 corporate: resolve(__dirname, 'corporate.html'),
                 gettingHere: resolve(__dirname, 'getting-here.html'),
+                location: resolve(__dirname, 'location.html'),
             },
             output: {
                 dir: 'dist',
