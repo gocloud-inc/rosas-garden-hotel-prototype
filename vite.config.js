@@ -63,6 +63,7 @@ export default defineConfig({
 
                 allOccasionsPlated: resolve(__dirname, 'all-occasions-plated-package.html'),
                 allOccasionsBuffet: resolve(__dirname, 'all-occasions-buffet-package.html'),
+                allOccasionsBuffet3: resolve(__dirname, 'all-occasions-buffet-3.html'),
 
                 dining: resolve(__dirname, 'dining.html'),
                 facilities: resolve(__dirname, 'facilities.html'),
