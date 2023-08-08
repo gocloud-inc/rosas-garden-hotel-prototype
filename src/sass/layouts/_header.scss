@@ -103,6 +103,10 @@
             @include breakpoint("xl") {
                 display: none;
             }
+            
+            @media (max-width: 1300px) {
+                gap: 0.5rem;
+            }
 
             .nav-item {
                 position: relative;
@@ -132,6 +136,10 @@
                     gap: 0.5rem;
                     transition: background-color 0.3s ease;
                     width: fit-content;
+
+                    @media (max-width: 1300px) {
+                        font-size: 0.8rem;
+                    }
 
                     @media (min-width: 1200px) {
                         &::before {
